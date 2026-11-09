@@ -5,6 +5,23 @@
 <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <meta name="theme-color" content="#050505">
 <meta name="description" content="Black JD, da Joias Diamantina: relógios masculinos e femininos com até 50% de desconto, de 16 à 21 de novembro. Entre no Grupo VIP.">
+<!-- Meta Pixel Code -->
+<script>
+!function(f,b,e,v,n,t,s)
+{if(f.fbq)return;n=f.fbq=function(){n.callMethod?
+n.callMethod.apply(n,arguments):n.queue.push(arguments)};
+if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';
+n.queue=[];t=b.createElement(e);t.async=!0;
+t.src=v;s=b.getElementsByTagName(e)[0];
+s.parentNode.insertBefore(t,s)}(window, document,'script',
+'https://connect.facebook.net/en_US/fbevents.js');
+fbq('init', '28696333316735839');
+fbq('track', 'PageView');
+</script>
+<noscript><img height="1" width="1" style="display:none"
+src="https://www.facebook.com/tr?id=28696333316735839&ev=PageView&noscript=1"
+/></noscript>
+<!-- End Meta Pixel Code -->
 <title>Black JD</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -482,6 +499,12 @@ footer { padding-block: 40px 96px; border-top: 1px solid var(--hair); text-align
   new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; update(); }).observe(heroCta);
   new IntersectionObserver(function (e) { finalVisible = e[0].isIntersecting; update(); }, { threshold: 0.25 }).observe(finalCta);
 })();
+</script>
+<script>
+// Meta Pixel: evento Lead quando alguém clica em qualquer botão que leva ao Grupo VIP
+document.querySelectorAll('a[href*="chat.whatsapp.com"]').forEach(function (a) {
+  a.addEventListener('click', function () { if (window.fbq) { fbq('track', 'Lead'); } });
+});
 </script>
 </body>
 </html>
