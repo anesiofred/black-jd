@@ -1,0 +1,466 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<meta name="theme-color" content="#050505">
+<meta name="description" content="Black JD, da Joias Diamantina: relógios masculinos e femininos com até 50% de desconto, de 16 à 21 de novembro. Entre no Grupo VIP.">
+<title>Black JD</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Cormorant+Garamond:wght@400;500;600;700&family=Jost:wght@300;400;500;600&display=swap">
+
+<style>
+/* Mobile-first, uma coluna: retrato fundido ao fundo com título sólido ao lado, texto centralizado,
+   contagem em dígitos de display digital, CTA de largura total. Preto, branco e bordô da marca. */
+:root {
+  --bg: #050505;
+  --ink: #0e0b0c;
+  --white: #ffffff;
+  --soft: rgba(255,255,255,0.7);
+  --faint: rgba(255,255,255,0.16);
+  --hair: rgba(255,255,255,0.10);
+  --bordo: #71243C;
+  --bordo-h: #8B324C;
+  --bordo-l: #A64662;
+  --bordo-deep: #4A1626;
+  --font: 'Jost', system-ui, sans-serif;
+  --serif: 'Cormorant Garamond', Georgia, serif;
+  --r: 14px;
+  color-scheme: dark;
+}
+
+*, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
+#grupo { scroll-margin-top: 64px; }
+body {
+  font-family: var(--font); background: var(--bg); color: var(--white);
+  overflow-x: hidden; line-height: 1.55;
+}
+body::before {
+  content: ''; position: fixed; inset: 0 0 auto;
+  height: env(safe-area-inset-top, 0px); z-index: 101; background: var(--bg);
+}
+img, video { max-width: 100%; display: block; }
+
+.wrap {
+  max-width: 1040px; margin: 0 auto;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+.col { max-width: 560px; margin-inline: auto; }
+
+/* ─── BOTÕES ─── */
+.btn {
+  display: flex; align-items: center; justify-content: center; gap: 12px; width: 100%;
+  background: linear-gradient(180deg, var(--bordo-h), var(--bordo));
+  color: var(--white); text-decoration: none;
+  border: 1px solid var(--bordo-l); border-radius: var(--r);
+  min-height: 60px; padding: 18px 22px; font: 600 clamp(14px, 3.9vw, 16px)/1.2 var(--font); text-align: center;
+  letter-spacing: 0.12em; text-transform: uppercase;
+  box-shadow: 0 16px 48px rgba(113,36,60,0.55), inset 0 1px 0 rgba(255,255,255,0.18);
+  transition: transform .2s, box-shadow .2s, filter .2s;
+}
+@media (hover: hover) { .btn:hover { transform: translateY(-2px); filter: brightness(1.12); box-shadow: 0 22px 60px rgba(113,36,60,0.7), inset 0 1px 0 rgba(255,255,255,0.18); } }
+.btn:active { transform: scale(0.98); filter: brightness(0.95); }
+.btn svg { width: 22px; height: 22px; fill: currentColor; flex-shrink: 0; }
+.btn:focus-visible, .sound-btn:focus-visible, .head-link:focus-visible, .fab:focus-visible { outline: 2px solid var(--white); outline-offset: 3px; }
+
+/* ─── HEADER ─── */
+header {
+  position: fixed; top: 0; left: 0; right: 0; z-index: 100;
+  padding-top: env(safe-area-inset-top, 0px);
+  background: rgba(5,5,5,0.82);
+  backdrop-filter: blur(18px); -webkit-backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--hair);
+}
+.header-band {
+  display: flex; align-items: center; justify-content: space-between; gap: 16px; padding-block: 10px;
+  padding-left: max(20px, env(safe-area-inset-left, 0px));
+  padding-right: max(20px, env(safe-area-inset-right, 0px));
+}
+.logo { display: flex; align-items: center; gap: 10px; }
+.logo-badge { background: var(--white); border-radius: 5px; padding: 3px 4px; line-height: 0; display: flex; }
+.logo-badge img { height: 24px; width: auto; }
+.logo-name { font-size: 11px; font-weight: 600; letter-spacing: 0.2em; text-transform: uppercase; line-height: 1.35; }
+.logo-name small { display: block; font-size: 10px; font-weight: 400; color: var(--soft); letter-spacing: 0.18em; }
+.head-link {
+  font-size: 11px; font-weight: 600; letter-spacing: 0.14em; text-transform: uppercase;
+  color: var(--white); text-decoration: none; display: inline-flex; align-items: center; min-height: 44px; padding: 0 16px;
+  border: 1px solid var(--bordo-l); border-radius: 10px; transition: background .2s;
+}
+.head-link:hover { background: var(--bordo); }
+
+/* ─── HERO ─── */
+.hero { position: relative; overflow: hidden; padding-top: 62px; }
+.hero::before {
+  content: ''; position: absolute; left: 50%; top: 0; width: 140%; max-width: 1100px; height: 680px; transform: translateX(-50%); pointer-events: none;
+  background: radial-gradient(ellipse 50% 46% at 50% 44%, rgba(113,36,60,0.6), rgba(113,36,60,0.16) 55%, transparent 75%);
+  filter: blur(30px);
+}
+.hero { --pw: min(100vw, 440px); }
+.hero-top { position: relative; width: var(--pw); margin: 0 auto; container-type: inline-size; }
+/* Foto como plano de fundo: mostra de 8% a 98% da altura original; o texto sobe sobre a base escurecida */
+.hero-photo { position: relative; aspect-ratio: 1284 / 1715; }
+.hero-photo::before {
+  content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(to bottom, transparent 66%, rgba(5,5,5,0.62) 79%, rgba(5,5,5,0.95) 92%, var(--bg) 100%);
+}
+.hero-photo img {
+  width: 100%; height: 100%; object-fit: cover; object-position: 50% 80%;
+  filter: contrast(1.06) saturate(0.95);
+  -webkit-mask-image: linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 8%, #000 100%);
+  -webkit-mask-composite: source-in;
+  mask-image: linear-gradient(to right, transparent 0, #000 7%, #000 93%, transparent 100%), linear-gradient(to bottom, transparent 0, #000 8%, #000 100%);
+  mask-composite: intersect;
+}
+.hero-photo::after {
+  content: ''; position: absolute; inset: 0; mix-blend-mode: soft-light; pointer-events: none;
+  background: linear-gradient(150deg, rgba(166,70,98,0.7), transparent 55%);
+}
+/* Título na faixa de blusa preta entre o braço de cima e o de baixo (≈58%–68% da altura da foto) */
+.hero-title {
+  position: absolute; left: 50%; top: 62.2%; transform: translate(-50%, -50%); z-index: 2;
+  white-space: nowrap; text-transform: uppercase; text-align: center;
+  font-family: var(--serif); font-weight: 600; line-height: 1;
+  font-size: 11cqw; letter-spacing: 0.06em; color: var(--white);
+}
+.hero-title b { font-weight: 700; color: var(--bordo); margin-left: 0.14em; }
+@supports not (font-size: 1cqw) { .hero-title { font-size: clamp(28px, 10vw, 60px); } }
+
+.hero-body { position: relative; z-index: 3; margin-top: calc(var(--pw) * -0.2); padding-block: 0 56px; text-align: center; }
+.kicker {
+  font-size: clamp(14px, 4vw, 18px); font-weight: 500; letter-spacing: 0.24em; text-transform: uppercase;
+  line-height: 1.6; text-wrap: balance;
+}
+.lead { margin-top: 22px; font-size: clamp(15px, 4.2vw, 18px); font-weight: 300; color: var(--soft); text-wrap: pretty; }
+.lead strong { color: var(--white); font-weight: 500; }
+
+/* ─── CONTAGEM ─── */
+.cd-block { margin-top: 30px; }
+.cd-top, .cd-caption { font-size: 12px; font-weight: 500; letter-spacing: 0.3em; text-transform: uppercase; color: var(--soft); }
+.cd-top { margin-bottom: 18px; }
+.cd-caption { margin-top: 18px; }
+.countdown { display: grid; grid-template-columns: repeat(4, 1fr); }
+.cd-unit { display: flex; flex-direction: column; align-items: center; gap: 6px; padding-block: 4px; }
+.cd-unit + .cd-unit { border-left: 1px solid var(--hair); }
+.digits { display: flex; font-family: var(--serif); font-weight: 600; font-size: clamp(34px, 10vw, 52px); line-height: 1; }
+.dg { display: inline-block; width: 0.56em; text-align: center; font-variant-numeric: lining-nums; }
+.cd-label { font-size: clamp(11px, 3vw, 12px); font-weight: 400; letter-spacing: 0.12em; text-transform: uppercase; color: var(--soft); }
+.hero-body .btn { margin-top: 18px; }
+.cta-note { margin: 38px auto 0; max-width: 24em; font-family: var(--serif); font-size: clamp(21px, 5.6vw, 26px); line-height: 1.25; color: var(--white); font-weight: 500; text-wrap: balance; }
+
+/* ─── DESCONTOS ─── */
+.offers { padding-block: 48px 72px; }
+.section-kicker { text-align: center; font-size: 12px; font-weight: 600; letter-spacing: 0.3em; text-transform: uppercase; color: var(--soft); }
+.section-title { text-align: center; font-family: var(--serif); font-weight: 600; font-size: clamp(32px, 8vw, 50px); line-height: 1.08; margin-top: 12px; text-wrap: balance; }
+.offers-grid { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; margin-top: 32px; max-width: 760px; margin-inline: auto; }
+.offer {
+  position: relative; border-radius: 18px; padding: 34px 20px 30px; text-align: center; overflow: hidden;
+  background: var(--ink); border: 1px solid var(--hair);
+  box-shadow: 0 24px 60px rgba(0,0,0,0.6);
+}
+.offer.pix { background: linear-gradient(160deg, var(--bordo-h), var(--bordo) 55%, var(--bordo-deep)); border-color: var(--bordo-l); box-shadow: 0 24px 70px rgba(113,36,60,0.5); }
+.offer-tag { font-size: 12px; font-weight: 600; letter-spacing: 0.28em; text-transform: uppercase; color: var(--soft); }
+.offer.pix .offer-tag { color: rgba(255,255,255,0.88); }
+.offer-num { font-family: var(--serif); font-weight: 700; font-size: clamp(88px, 25vw, 120px); line-height: 0.95; letter-spacing: -0.02em; margin-top: 10px; display: inline-flex; align-items: flex-start; font-variant-numeric: lining-nums; }
+.offer-num small { font-family: var(--font); font-size: max(11px, 0.17em); font-weight: 500; letter-spacing: 0.14em; margin-top: 0.9em; margin-left: 8px; line-height: 1.25; text-align: left; }
+.offer-note { font-size: 15px; font-weight: 400; color: var(--soft); margin-top: 8px; }
+.offer.pix .offer-note { color: rgba(255,255,255,0.92); }
+@media (max-width: 639px) {
+  .offers-grid { gap: 10px; margin-top: 24px; }
+  .offer { padding: 24px 8px 22px; border-radius: 14px; }
+  .offer-tag { font-size: 11px; letter-spacing: 0.14em; }
+  .offer-num { font-size: clamp(52px, 16vw, 76px); margin-top: 6px; }
+  .offer-num small { margin-top: 0.5em; margin-left: 4px; letter-spacing: 0.08em; }
+  .offer-note { font-size: 13px; margin-top: 6px; line-height: 1.35; }
+}
+
+/* ─── VÍDEO ─── */
+.showcase { padding-block: 8px 80px; }
+.stage {
+  position: relative; overflow: hidden; isolation: isolate; margin-top: 32px;
+  aspect-ratio: 16 / 9; background: #000; border-radius: 18px; border: 1px solid var(--hair);
+  box-shadow: 0 40px 100px rgba(0,0,0,0.85), 0 24px 120px rgba(113,36,60,0.4);
+}
+@media (max-width: 700px) { .stage { aspect-ratio: 5 / 6; background: radial-gradient(ellipse 80% 60% at 50% 40%, rgba(113,36,60,0.55), #050505 75%); } .stage-bg { display: none; } }
+.stage-bg {
+  position: absolute; inset: -12%; width: 124%; height: 124%; max-width: none;
+  object-fit: cover; filter: blur(34px) saturate(1.1) brightness(0.55); z-index: 0;
+}
+.stage::before {
+  content: ''; position: absolute; inset: 0; z-index: 1; pointer-events: none;
+  background: linear-gradient(90deg, rgba(5,5,5,0.7), transparent 30%, transparent 70%, rgba(5,5,5,0.7)), linear-gradient(135deg, rgba(113,36,60,0.5), transparent 55%);
+}
+.stage-main { position: relative; z-index: 2; height: 100%; width: auto; aspect-ratio: 720 / 1280; max-width: 100%; margin-inline: auto; background: #000; box-shadow: 0 0 80px rgba(0,0,0,0.7); }
+.sound-btn {
+  position: absolute; left: 14px; bottom: 14px; z-index: 4; min-height: 44px;
+  display: inline-flex; align-items: center; gap: 8px;
+  background: rgba(5,5,5,0.78); color: var(--white);
+  border: 1px solid var(--faint); border-radius: 10px; padding: 10px 14px; cursor: pointer;
+  font: 600 11px/1 var(--font); letter-spacing: 0.14em; text-transform: uppercase;
+  backdrop-filter: blur(8px); -webkit-backdrop-filter: blur(8px); transition: background .2s;
+}
+@media (hover: hover) { .sound-btn:hover { background: var(--bordo); } }
+.stage-main { cursor: pointer; }
+.stage-msg { position: absolute; inset: 0; z-index: 3; display: none; place-items: center; padding: 24px; text-align: center; pointer-events: none; font-size: 14px; letter-spacing: 0.08em; color: var(--soft); }
+.stage.loading .stage-msg, .stage.failed .stage-msg { display: grid; }
+.play-btn { position: absolute; z-index: 4; left: 50%; top: 50%; transform: translate(-50%, -50%); display: grid; place-items: center; width: 72px; height: 72px; border-radius: 50%; cursor: pointer; background: rgba(113,36,60,0.92); border: 1px solid var(--bordo-l); color: var(--white); box-shadow: 0 12px 40px rgba(0,0,0,0.6); }
+.play-btn svg { width: 28px; height: 28px; fill: currentColor; margin-left: 3px; }
+.sound-btn svg { width: 14px; height: 14px; fill: none; stroke: currentColor; stroke-width: 1.7; stroke-linecap: round; stroke-linejoin: round; }
+
+.video-cta { margin-top: 28px; }
+
+/* ─── CTA FINAL ─── */
+.cta-band { background: linear-gradient(180deg, var(--bordo), var(--bordo-deep)); position: relative; overflow: hidden; padding-block: 72px; text-align: center; }
+.cta-band::before { content: ''; position: absolute; inset: 0; pointer-events: none; background: radial-gradient(ellipse 70% 80% at 50% 0%, rgba(255,255,255,0.12), transparent 70%); }
+.cta-band .wrap { position: relative; }
+.cta-headline { font-family: var(--serif); font-weight: 600; font-size: clamp(30px, 7.4vw, 48px); line-height: 1.1; text-wrap: balance; max-width: 20em; margin-inline: auto; }
+.cta-body { margin-top: 14px; color: rgba(255,255,255,0.82); font-weight: 300; }
+.cta-band .btn { margin-top: 16px; background: var(--white); color: var(--bordo-deep); border-color: var(--white); box-shadow: 0 20px 60px rgba(0,0,0,0.45), inset 0 -2px 0 rgba(0,0,0,0.08); }
+.cta-band .btn:hover { filter: none; background: #f6ecef; }
+
+.cta-limit { margin-top: 30px; font-size: 12px; font-weight: 500; letter-spacing: 0.28em; text-transform: uppercase; color: rgba(255,255,255,0.88); }
+
+/* ─── FLUTUANTE ─── */
+.fab {
+  position: fixed; z-index: 90;
+  right: max(14px, env(safe-area-inset-right, 0px)); bottom: calc(14px + env(safe-area-inset-bottom, 0px));
+  display: grid; place-items: center; width: 52px; height: 52px; border-radius: 50%;
+  background: linear-gradient(180deg, var(--bordo-h), var(--bordo)); color: var(--white); text-decoration: none;
+  border: 1px solid var(--bordo-l);
+  box-shadow: 0 10px 30px rgba(0,0,0,0.7), 0 0 0 3px rgba(113,36,60,0.3);
+  opacity: 0; transform: translateY(16px); pointer-events: none; transition: opacity .3s, transform .3s, filter .2s;
+}
+.fab.show { opacity: 1; transform: none; pointer-events: auto; }
+@media (hover: hover) { .fab:hover { filter: brightness(1.15); } }
+.fab:active { transform: scale(0.97); }
+.fab svg { width: 26px; height: 26px; fill: currentColor; }
+.no-io .fab { opacity: 1; transform: none; pointer-events: auto; }
+
+@media (max-width: 380px) { .btn { letter-spacing: 0.06em; padding-inline: 14px; } .head-link { padding: 0 12px; } .logo-name small { display: none; } }
+
+/* ─── FOOTER ─── */
+footer { padding-block: 40px 96px; border-top: 1px solid var(--hair); text-align: center; }
+.footer-logo { display: flex; align-items: center; justify-content: center; gap: 10px; margin-bottom: 14px; }
+.footer-logo .logo-badge img { height: 20px; }
+.ft { font-size: 11px; color: var(--soft); letter-spacing: 0.08em; margin: 4px 0; }
+.ft a { color: var(--soft); text-decoration: none; display: inline-block; padding: 15px 12px; }
+.ft a:hover { color: var(--white); }
+.ft.small { margin-top: 10px; font-size: 11px; opacity: .65; }
+
+@media (prefers-reduced-motion: reduce) { * { transition: none !important; animation: none !important; scroll-behavior: auto !important; } }
+</style>
+</head>
+<body>
+<header>
+  <div class="header-band">
+    <div class="logo">
+      <div class="logo-badge"><img src="logo.jpg" alt="JD"></div>
+      <div class="logo-name">Joias Diamantina<small>Desde 1985</small></div>
+    </div>
+    <a class="head-link" href="#grupo">Grupo VIP</a>
+  </div>
+</header>
+
+<section class="hero">
+  <div class="hero-top">
+    <div class="hero-photo"><img src="scarlatt.webp" alt="Scarlatt Macedo com vários relógios nos braços"></div>
+    <h1 class="hero-title">Black <b>JD</b></h1>
+  </div>
+
+  <div class="wrap">
+    <div class="hero-body col">
+      <p class="kicker">De 16 à 21 de novembro</p>
+      <p class="lead">Relógios masculinos e femininos com <strong>até 50% de desconto</strong></p>
+
+      <div class="cd-block">
+        <p class="cd-top" id="cd-top">Faltam</p>
+        <div class="countdown" id="countdown" role="timer" aria-live="off" aria-label="Contagem regressiva">
+          <div class="cd-unit"><div class="digits" id="d-days"></div><span class="cd-label">dias</span></div>
+          <div class="cd-unit"><div class="digits" id="d-hours"></div><span class="cd-label">horas</span></div>
+          <div class="cd-unit"><div class="digits" id="d-min"></div><span class="cd-label">minutos</span></div>
+          <div class="cd-unit"><div class="digits" id="d-sec"></div><span class="cd-label">segundos</span></div>
+        </div>
+        <p class="cd-caption" id="cd-caption">Para a abertura da Black JD</p>
+      </div>
+
+      <p class="cta-note">Para ver todos os modelos e ter acesso à Black JD, entre no Grupo VIP.</p>
+      <a class="btn" id="hero-cta" href="https://chat.whatsapp.com/GcCBU6aancTABNPbjtnSrI?s=cl&p=i&mlu=4&ilr=4" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>
+        Quero entrar no Grupo VIP
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="offers" aria-label="Condições de pagamento">
+  <div class="wrap">
+    <p class="section-kicker">Condições da Black JD</p>
+    <h2 class="section-title">Dois jeitos de pagar, os dois com desconto</h2>
+    <div class="offers-grid">
+      <div class="offer pix">
+        <p class="offer-tag">No PIX</p>
+        <div class="offer-num">50<small>%<br>OFF</small></div>
+        <p class="offer-note">Pagamento à vista</p>
+      </div>
+      <div class="offer">
+        <p class="offer-tag">No cartão</p>
+        <div class="offer-num">40<small>%<br>OFF</small></div>
+        <p class="offer-note">Em até 4× sem juros</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="showcase">
+  <div class="wrap">
+    <p class="section-kicker">A seleção</p>
+    <h2 class="section-title">Veja os relógios de perto</h2>
+    <div class="stage loading">
+      <video class="stage-bg" muted loop playsinline preload="none" aria-hidden="true" tabindex="-1"></video>
+      <video class="stage-main" id="reel" muted loop playsinline preload="auto"></video>
+      <div class="stage-msg" id="stage-msg">Carregando vídeo…</div>
+      <button class="play-btn" id="play" type="button" aria-label="Reproduzir vídeo" hidden><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M7 4.5v15l13-7.5z"/></svg></button>
+      <button class="sound-btn" id="sound" type="button" aria-pressed="false">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><path d="M11 5 6 9H3v6h3l5 4V5z"/><path id="wave" d="M16 9a4 4 0 0 1 0 6M19 6a8 8 0 0 1 0 12" style="display:none"/><path id="mute" d="m17 9 5 6m0-6-5 6"/></svg>
+        <span id="sound-label">Ativar som</span>
+      </button>
+    </div>
+
+    <div class="col video-cta">
+      <a class="btn" href="https://chat.whatsapp.com/GcCBU6aancTABNPbjtnSrI?s=cl&p=i&mlu=4&ilr=4" target="_blank" rel="noopener">
+        <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>
+        Entrar para o Grupo VIP
+      </a>
+    </div>
+  </div>
+</section>
+
+<section class="cta-band" id="grupo">
+  <div class="wrap col">
+    <h2 class="cta-headline">Para ver todos os modelos e ter acesso à Black JD, entre no Grupo VIP</h2>
+    <p class="cta-body">Gratuito, direto no WhatsApp. Você pode sair quando quiser.</p>
+    <p class="cta-limit">As vagas são limitadas</p>
+    <a href="https://chat.whatsapp.com/GcCBU6aancTABNPbjtnSrI?s=cl&p=i&mlu=4&ilr=4" target="_blank" rel="noopener" class="btn">
+      <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>
+      Quero garantir meu acesso
+    </a>
+  </div>
+</section>
+
+<footer>
+  <div class="wrap">
+    <div class="footer-logo">
+      <div class="logo-badge"><img src="logo.jpg" alt="JD"></div>
+      <span class="ft" style="letter-spacing:.2em;text-transform:uppercase">Joias Diamantina</span>
+    </div>
+    <p class="ft">Ouro 18k · Desde 1985 · Guanhães, MG</p>
+    <p class="ft"><a href="https://www.instagram.com/joias_diamantina/" target="_blank" rel="noopener">@joias_diamantina</a></p>
+    <p class="ft small">Promoção válida de 16 à 21 de novembro. © Joias Diamantina LTDA.</p>
+  </div>
+</footer>
+
+<a class="fab" id="fab" href="https://chat.whatsapp.com/GcCBU6aancTABNPbjtnSrI?s=cl&p=i&mlu=4&ilr=4" target="_blank" rel="noopener" aria-label="Entrar no Grupo VIP pelo WhatsApp">
+  <svg viewBox="0 0 24 24" aria-hidden="true"><use href="#wa"/></svg>
+</a>
+
+<svg width="0" height="0" style="position:absolute" aria-hidden="true">
+  <symbol id="wa" viewBox="0 0 24 24"><path d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413z"/></symbol>
+</svg>
+
+<script>
+(function () {
+  var start = new Date('2026-11-16T03:00:00Z');
+  var end = new Date('2026-11-22T03:00:00Z');
+
+  var last = {};
+  function show(id, n) {
+    var str = String(n).padStart(2, '0');
+    if (last[id] === str) return;
+    last[id] = str;
+    document.getElementById(id).innerHTML = str.split('').map(function (c) { return '<span class="dg">' + c + '</span>'; }).join('');
+  }
+
+  function tick() {
+    var now = new Date();
+    var diff = start - now;
+    var top = document.getElementById('cd-top');
+    var cap = document.getElementById('cd-caption');
+    if (diff <= 0) {
+      diff = end - now;
+      if (diff > 0) { top.textContent = 'Black JD aberta. Faltam'; cap.textContent = 'Para o encerramento'; }
+      else { diff = 0; top.textContent = 'Black JD'; cap.textContent = 'Encerrada'; }
+    }
+    show('d-days', Math.floor(diff / 86400000));
+    show('d-hours', Math.floor((diff % 86400000) / 3600000));
+    show('d-min', Math.floor((diff % 3600000) / 60000));
+    show('d-sec', Math.floor((diff % 60000) / 1000));
+  }
+  tick();
+  setInterval(tick, 1000);
+
+  // Vídeo: baixa o arquivo inteiro e toca a partir da memória (funciona mesmo quando o servidor
+  // não aceita pedidos parciais, como exigem iPhone e alguns Androids)
+  var v = document.getElementById('reel');
+  var bg = document.querySelector('.stage-bg');
+  var stage = document.querySelector('.stage');
+  var msg = document.getElementById('stage-msg');
+  var playBtn = document.getElementById('play');
+  var btn = document.getElementById('sound');
+  var label = document.getElementById('sound-label');
+  var wave = document.getElementById('wave');
+  var mute = document.getElementById('mute');
+  var SRC = 'relogios.mp4';
+  if (bg && !window.matchMedia('(min-width: 701px)').matches) { bg.remove(); bg = null; }
+
+  function kick() {
+    var p = v.play();
+    if (p && p.catch) p.catch(function () { stage.classList.remove('loading'); playBtn.hidden = false; });
+    if (bg) { var pb = bg.play(); if (pb && pb.catch) pb.catch(function () {}); }
+  }
+  function setSrc(u) { v.src = u; if (bg) bg.src = u; kick(); }
+  var fell = false;
+  function direct() {
+    if (fell) { stage.classList.remove('loading'); stage.classList.add('failed'); msg.textContent = 'Não foi possível carregar o vídeo. Atualize a página para tentar de novo.'; return; }
+    fell = true; setSrc(SRC);
+  }
+  v.addEventListener('error', direct);
+  v.addEventListener('playing', function () { stage.classList.remove('loading'); playBtn.hidden = true; });
+  playBtn.addEventListener('click', function () { v.play().then(function () { playBtn.hidden = true; }).catch(function () {}); });
+  if (bg) {
+    v.addEventListener('seeked', function () { bg.currentTime = v.currentTime; });
+    v.addEventListener('pause', function () { bg.pause(); });
+    v.addEventListener('play', function () { bg.play().catch(function () {}); });
+  }
+  fetch(SRC).then(function (r) { if (!r.ok) throw new Error('http'); return r.blob(); })
+    .then(function (b) { setSrc(URL.createObjectURL(new Blob([b], { type: 'video/mp4' }))); })
+    .catch(direct);
+
+  function toggleSound() {
+    v.muted = !v.muted;
+    if (!v.muted) { v.volume = 1; var q = v.play(); if (q && q.catch) q.catch(function () {}); }
+    btn.setAttribute('aria-pressed', String(!v.muted));
+    label.textContent = v.muted ? 'Ativar som' : 'Desativar som';
+    wave.style.display = v.muted ? 'none' : '';
+    mute.style.display = v.muted ? '' : 'none';
+  }
+  if (v && btn) {
+    btn.addEventListener('click', toggleSound);
+    v.addEventListener('click', toggleSound);
+  }
+
+  // Botão flutuante: aparece depois do CTA do topo e some com o CTA final na tela
+  var fab = document.getElementById('fab');
+  var heroCta = document.getElementById('hero-cta');
+  var finalCta = document.getElementById('grupo');
+  if (!('IntersectionObserver' in window)) { document.documentElement.classList.add('no-io'); return; }
+  var heroVisible = true, finalVisible = false, scrolled = false;
+  function update() { fab.classList.toggle('show', scrolled && !heroVisible && !finalVisible); }
+  window.addEventListener('scroll', function () { var s = window.scrollY > 120; if (s !== scrolled) { scrolled = s; update(); } }, { passive: true });
+  new IntersectionObserver(function (e) { heroVisible = e[0].isIntersecting; update(); }).observe(heroCta);
+  new IntersectionObserver(function (e) { finalVisible = e[0].isIntersecting; update(); }, { threshold: 0.25 }).observe(finalCta);
+})();
+</script>
+</body>
+</html>
