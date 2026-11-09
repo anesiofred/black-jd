@@ -31,6 +31,7 @@
 }
 
 *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
+[hidden] { display: none !important; }
 html { scroll-behavior: smooth; -webkit-text-size-adjust: 100%; text-size-adjust: 100%; -webkit-tap-highlight-color: transparent; }
 #grupo { scroll-margin-top: 64px; }
 body {
@@ -427,6 +428,7 @@ footer { padding-block: 40px 96px; border-top: 1px solid var(--hair); text-align
   }
   v.addEventListener('error', direct);
   v.addEventListener('playing', function () { stage.classList.remove('loading'); playBtn.hidden = true; });
+  v.addEventListener('pause', function () { if (!document.hidden) playBtn.hidden = false; });
   playBtn.addEventListener('click', function () { v.play().then(function () { playBtn.hidden = true; }).catch(function () {}); });
   if (bg) {
     v.addEventListener('seeked', function () { bg.currentTime = v.currentTime; });
@@ -447,7 +449,7 @@ footer { padding-block: 40px 96px; border-top: 1px solid var(--hair); text-align
   }
   if (v && btn) {
     btn.addEventListener('click', toggleSound);
-    v.addEventListener('click', toggleSound);
+    v.addEventListener('click', function () { if (v.paused) { v.play().catch(function () {}); } else { v.pause(); } });
   }
 
   // Botão flutuante: aparece depois do CTA do topo e some com o CTA final na tela
