@@ -501,10 +501,17 @@ footer { padding-block: 40px 96px; border-top: 1px solid var(--hair); text-align
 })();
 </script>
 <script>
-// Meta Pixel: evento Lead quando alguém clica em qualquer botão que leva ao Grupo VIP
-document.querySelectorAll('a[href*="chat.whatsapp.com"]').forEach(function (a) {
-  a.addEventListener('click', function () { if (window.fbq) { fbq('track', 'Lead'); } });
+// Meta Pixel: evento Lead em cada botão que leva ao Grupo VIP, com a posição do botão
+[['#hero-cta', 'topo'], ['.video-cta a', 'video'], ['#grupo a.btn', 'final'], ['#fab', 'flutuante']].forEach(function (c) {
+  document.querySelectorAll(c[0]).forEach(function (a) {
+    a.addEventListener('click', function () {
+      if (window.fbq) { fbq('track', 'Lead', { content_name: 'Grupo VIP Black JD', button_location: c[1] }); }
+    });
+  });
 });
+// Botão "Grupo VIP" do menu: evento personalizado, pois apenas rola a página até o fim
+var menu = document.querySelector('.head-link');
+if (menu) { menu.addEventListener('click', function () { if (window.fbq) { fbq('trackCustom', 'CliqueMenuGrupoVIP'); } }); }
 </script>
 </body>
 </html>
